@@ -1,5 +1,5 @@
 import Category from "@/entities/category/ui/Category";
-import AddCategoryButton from "@/features/add-category/ui/AddCategoryButton";
+import AddCategoryButton from "@/features/add-category/ui/add-category-button";
 import React from "react";
 
 const CategoryList = () => {
