@@ -1,8 +1,11 @@
+import { getCategories } from "@/entities/category/api/getCategories";
 import Category from "@/entities/category/ui/Category";
 import AddCategoryButton from "@/features/add-category/ui/add-category-button";
 import React from "react";
 
 const CategoryList = () => {
+  getCategories();
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-row justify-between">
