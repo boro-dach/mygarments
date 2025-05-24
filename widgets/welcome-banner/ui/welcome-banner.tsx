@@ -1,5 +1,5 @@
 import React from "react";
-import { getTimeGreeting } from "../lib/getTimeGreeting";
+import { getTimeGreeting } from "../lib/get-time-greeting";
 
 const WelcomeBanner = ({ username }: { username: string }) => {
   const greeting = getTimeGreeting();

@@ -2,16 +2,10 @@
 
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getCategories } from "@/entities/category/api/getCategories";
+import { getCategories } from "@/entities/category/api/get-categories";
 import Category from "@/entities/category/ui/Category";
 import AddCategoryButton from "@/features/add-category/ui/add-category-button";
-
-interface CategoryData {
-  id: string | number;
-  title: string;
-  amount: number;
-  count: number;
-}
+import { CategoryData } from "../model/category-data";
 
 const CategoryList = () => {
   const {
