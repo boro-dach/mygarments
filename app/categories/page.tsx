@@ -1,5 +1,5 @@
-import CategoryList from "@/widgets/CategoryList/ui/CategoryList";
-import WelcomeBanner from "@/widgets/WelcomeBanner/ui/WelcomeBanner";
+import CategoryList from "@/widgets/category-list/ui/category-list";
+import WelcomeBanner from "@/widgets/welcome-banner/ui/welcome-banner";
 import React from "react";
 
 const Categories = () => {

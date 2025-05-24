@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/shared/ui/card";
 import React from "react";
-import { CategoryProps } from "../model/CategoryProps";
+import { CategoryProps } from "../model/category-props";
 
 const Category = ({ title, amount, count }: CategoryProps) => {
   return (

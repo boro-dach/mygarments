@@ -1,24 +1,12 @@
 "use client";
 
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getCategories } from "@/entities/category/api/get-categories";
 import Category from "@/entities/category/ui/Category";
 import AddCategoryButton from "@/features/add-category/ui/add-category-button";
-import { CategoryData } from "../model/category-data";
+import { useCategories } from "../model/types";
 
 const CategoryList = () => {
-  const {
-    data: categories,
-    isLoading,
-    isError,
-    error,
-  } = useQuery<CategoryData[], Error>({
-    queryKey: ["categories"],
-    queryFn: getCategories,
-    staleTime: 5 * 60 * 1000,
-    refetchOnWindowFocus: true,
-  });
+  const { data: categories, isLoading, isError, error } = useCategories();
 
   if (isLoading) {
     return (
