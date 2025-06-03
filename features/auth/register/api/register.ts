@@ -1,21 +1,24 @@
 import { saveAccessToken } from "@/shared/lib/cookies/save-access-token";
 import axios from "axios";
+import { toast } from "sonner";
 
 export async function Register(values: any) {
   try {
-    const result = await axios.post(
+    const response = await axios.post(
       `http://localhost:5000/auth/register`,
       values
     );
 
-    if (!result.data.accessToken) {
+    if (!response.data.accessToken) {
       throw Error("accessToken not found in response.");
     }
-    saveAccessToken(result.data.accessToken);
+    saveAccessToken(response.data.accessToken);
 
-    return result.data;
-  } catch (error) {
-    console.error("Login failed:", error);
+    toast.success("Успешная регистрация!");
+    return response.data;
+  } catch (error: any) {
+    const message = error?.response?.data?.message || "Неизвестная ошибка";
+    toast.error(`Ошибка регистрации: ${message}`);
     throw error;
   }
 }
