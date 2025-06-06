@@ -16,8 +16,10 @@ import { Input } from "@/shared/ui/input";
 import { Button } from "@/shared/ui/button";
 import Link from "next/link";
 import { Login } from "../api/login";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -26,8 +28,11 @@ const LoginForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    return Login(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      await Login(values);
+      router.push("/categories");
+    } catch (error) {}
   }
 
   return (
