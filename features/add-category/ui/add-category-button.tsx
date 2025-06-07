@@ -13,7 +13,7 @@ const AddCategoryButton = () => {
       open={open}
       onOpenChange={setOpen}
       trigger={
-        <Button variant="secondary" className="w-6 h-6">
+        <Button className="w-8 h-8">
           <Plus />
         </Button>
       }
