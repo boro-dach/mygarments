@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 export async function addCategory(values: any) {
   const accessToken = Cookies.get("accessToken");
   const response = await axios.post(
-    "http://localhost:5000/category/add-category",
+    "http://localhost:5000/category/add",
     values,
     {
       headers: {

@@ -8,7 +8,7 @@ export async function deleteCategory(categoryId: string) {
   };
 
   const response = await axios.post(
-    "http://localhost:5000/category/delete-category",
+    "http://localhost:5000/category/delete",
     payload,
     {
       headers: {
